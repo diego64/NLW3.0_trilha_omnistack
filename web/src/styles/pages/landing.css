@@ -80,3 +80,22 @@
 .content-wrapper .enter-app:hover {
     background: #96FEFF;
 }
+
+/*Ajuste da tela para dispositivos com telas menores*/
+
+#page-landing{
+    padding: 45px;
+}
+#page-landing .content-wrapper{
+    background-size: contain;
+}
+@media (max-height: 768px){
+    #page-landing .content-wrapper main h1{
+        font-size: 60px;
+        line-height: 60px;
+    }
+    #page-landing .content-wrapper main p,
+    .content-wrapper .location{
+        font-size: 20px;
+    }
+}

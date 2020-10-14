@@ -9,10 +9,10 @@ export class createOrphanages1602631439129 implements MigrationInterface {
                 {
                     name:'id',
                     type: 'integer',
-                    unsigned: true,
-                    isPrimary: true,
+                    unsigned: true, //NOT NULL
+                    isPrimary: true, //Primary Key
                     isGenerated: true,
-                    generationStrategy: 'increment',
+                    generationStrategy: 'increment', //auto_increment
                 },
                 {
                     name: 'name',
@@ -37,6 +37,10 @@ export class createOrphanages1602631439129 implements MigrationInterface {
                 {
                     name: 'instructions',
                     type: 'text'
+                },
+                {
+                    name: 'opening_hours',
+                    type: 'varchar',
                 },
                 {
                     name: 'open_on_weekends',

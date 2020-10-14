@@ -1,11 +1,23 @@
-import express, { request, response } from 'express';
+import express from 'express';
+import path from 'path';
+import cors from 'cors';
 
+import 'express-async-errors'
+
+//Conexão com o Banco de dados
 import './database/connection';
+
+//Importação das rotas
+import routes from './routes';
+
+import errorHandler from './errors/handler';
 
 const app = express();
 
-app.get('/users', (request, response) => {
-    return response.json({ message: 'Back-end rodando'});
-});
+app.use(cors());
+app.use(express.json());
+app.use(routes)
+app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')))
+app.use(errorHandler); //tratamento de errors
 
 app.listen(3333);
